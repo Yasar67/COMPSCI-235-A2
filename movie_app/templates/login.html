@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="topnav">
+  <a href="http://127.0.0.1:5000/">Home</a>
+  <a href="http://127.0.0.1:5000/movies">Movies</a>
+  <a class="active" href="http://127.0.0.1:5000/login">Login</a>
+
+</div>
+
+<h1 style="color: white">Login</h1>
+
+<form action="/action_page.php" method="post">
+  <div class="container">
+    <label style="color: white" for="uname"><b>Username</b></label>
+    <input type="text" placeholder="" name="uname" required>
+
+    <label style="color: white" for="psw"><b>Password</b></label>
+    <input type="password" placeholder="" name="psw" required>
+
+    <button style="color: white" type="submit">Login</button>
+
+  </div>
+
+</form>
+
+{% endblock %}
