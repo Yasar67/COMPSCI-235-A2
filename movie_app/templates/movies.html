@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<main>
 <div class="topnav">
   <a href="http://127.0.0.1:5000/">Home</a>
   <a class="active"  href="http://127.0.0.1:5000/movies">Movies</a>
   <a href="http://127.0.0.1:5000/login">Login</a>
-
-
 </div>
 
 <h1 style="color: white; font-size: 500%; text-align: center">Movies</h1>
@@ -21,27 +19,27 @@
         <th>Actors</th>
         <th>Year</th>
         <th>Runtime(Minutes)</th>
+        <th>Rating</th>
+        <th>Votes</th>
+        <th>Revenue (Million)</th>
     </thead>
 
-    <tbody>
     {% for movie in movies %}
+    <tbody>
         <tr>
-
-            <td>{{ movie.title }}</td>
-            <td>{% for genre in movie.genres %}
-              <div>{{ genre.genre_name }}</div>
-            {% endfor %}</td>
-            <td>{{ movie.description }}</td>
-            <td>{{ movie.director.director_full_name }}</td>
-            <td>{% for actor in movie.actors %}
-              <div>{{ actor.actor_full_name }}</div>
-            {% endfor %}</td>
-            <td>{{ movie.release_year }}</td>
-            <td>{{movie.runtime_minutes}}</td>
+            <td>{{ movie._title }}</td>
+            <td>{{ movie._genre }}</td>
+            <td>{{ movie._description }}</td>
+            <td>{{ movie._director }}</td>
+            <td>{{ movie._actors }}</td>
+            <td>{{ movie._release_year }}</td>
+            <td>{{ movie._runtime_minutes }}</td>
+            <td>{{ movie._rating }}</td>
+            <td>{{ movie._votes }}</td>
+            <td>{{ movie._revenue }}</td>
         </tr>
-    {% endfor %}
         </tbody>
+    {% endfor %}
     </table>
-
-
+</main>
 {% endblock %}

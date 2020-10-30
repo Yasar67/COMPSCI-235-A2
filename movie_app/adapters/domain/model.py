@@ -116,8 +116,56 @@ class Movie:
         self.__actors = []
         self.__genres = []
         self.__runtime_minutes = None
+        self.__rating = None
+        self.__votes = None
+        self.__revenue = None
+        self.__metascore = None
 
     # essential attributes
+
+    @property
+    def rating(self) -> int:
+        return self.__rating
+
+    @rating.setter
+    def rating(self, rating: int):
+        if type(rating) is int and rating >= 0:
+            self.__rating = rating
+        else:
+            self.__rating = None
+
+    @property
+    def revenue(self) -> int:
+        return self.__revenue
+
+    @revenue.setter
+    def revenue(self, revenue: int):
+        if type(revenue) is int:
+            self.__revenue = revenue
+        else:
+            self.__revenue = None
+
+    @property
+    def votes(self) -> int:
+        return self.__votes
+
+    @votes.setter
+    def votes(self, votes: int):
+        if type(votes) is int and votes >= 0:
+            self.__votes = votes
+        else:
+            self.__votes = None
+
+    @property
+    def metascore(self) -> int:
+        return self.__metascore
+
+    @metascore.setter
+    def metascore(self, metascore: int):
+        if type(metascore) is int and metascore >= 0:
+            self.__metascore = metascore
+        else:
+            self.__metascore = None
 
     @property
     def title(self) -> str:
@@ -211,7 +259,7 @@ class Movie:
             raise ValueError(f'Movie.runtime_minutes setter: Value out of range {val}')
 
     def __get_unique_string_rep(self):
-        return f"{self.__title}, {self.__release_year}"
+        return f"{self._title}, {self._release_year}"
 
     def __repr__(self):
         return f'<Movie {self.__get_unique_string_rep()}>'
