@@ -5,3 +5,6 @@ venv
 
 # python
 __pycache__
+
+# mac_os
+.DS_Store 
