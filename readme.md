@@ -36,3 +36,10 @@ The *A2/.env* file contains variable settings. They are set with appropriate val
 * `FLASK_ENV`: The environment in which to run the application (either `development` or `production`).
 * `SECRET_KEY`: Secret key used to encrypt session data.
 * `WTF_CSRF_SECRET_KEY`: Secret key used by the WTForm library.
+
+
+## Testing
+
+Testing requires that file *A2/tests/conftest.py* be edited to set the values of `TEST_DATA_PATH_MEMORY` and `TEST_DATA_PATH_DATABASE`.
+
+You can then run the tests.
